@@ -1,8 +1,8 @@
 # OASIS_START
-# DO NOT EDIT (digest: 9e2514d1c636164c7a74ebd7015f51b9)
+# DO NOT EDIT (digest: 4a3b9a4d1a4edf802094da384af7a06a)
 version = "0.9.0"
 description = "Maildir library"
-requires = "unix"
+requires = "unix fileutils"
 archive(byte) = "maildir.cma"
 archive(byte, plugin) = "maildir.cma"
 archive(native) = "maildir.cmxa"

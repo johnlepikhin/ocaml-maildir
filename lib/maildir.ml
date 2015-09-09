@@ -296,3 +296,18 @@ let iter f md =
 
 let fold f md x =
   Hashtbl.fold (fun _ msg x -> f msg x) md.msg_hash x
+
+let create_path md msg =
+  let dir =
+    if List.mem NEW msg.flags then "new" else "cur"
+  in
+  Printf.sprintf "%s/%s/%s" md.path dir msg.filename
+
+let move src dst msg =
+  FileUtil.mv (get src msg.uid) (create_path dst msg);
+  update src;
+  update dst
+
+let copy src dst msg =
+  FileUtil.cp [get src msg.uid] (create_path dst msg);
+  update dst

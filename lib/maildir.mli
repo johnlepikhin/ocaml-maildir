@@ -89,3 +89,11 @@ val iter : (msg -> unit) -> t -> unit
 val fold : (msg -> 'a -> 'a) -> t -> 'a -> 'a
 (** [fold f md x] computes [(f msg1 (f msg2 (... (f msgN x))))] where [msg1
     ... msgN] are the messages in [md]. *)
+
+val move : t -> t -> msg -> unit
+(** [move src dst msg] moves message [msg] from [src] maildir to [dst] *)
+
+val copy : t -> t -> msg -> unit
+(** [copy src dst msg] copies message [msg] from [src] maildir to [dst] *)
+
+

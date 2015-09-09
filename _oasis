@@ -10,7 +10,7 @@ BuildTools: ocamlbuild
 Library maildir
   Path: lib
   Modules: Maildir
-  BuildDepends: unix
+  BuildDepends: unix, fileutils
 
 Document maildir
   Title: Maildir docs
